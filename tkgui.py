@@ -20,7 +20,10 @@ def start(loadwin,bar,percent,text):
                 infer(dirpath, filename, model)
                 # time.sleep(1)
                 ifilename = filenames.index(filename)
-                bar['value'] += int((ifilename + 1 / len(filenames)) * 100)
+                print(str(ifilename + 1) + " " + str(len(filenames)))
+                c = int((ifilename + 1) / len(filenames) * 100)
+                print(c)
+                bar['value'] = c
                 percent.set(str(int(ifilename + 1) / len(filenames) * 100) + "%")
                 text.set(str(ifilename + 1) + "/" + str(len(filenames)) + " Images completed")
                 loadwin.update_idletasks()
